@@ -23,8 +23,10 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'Raimondi/delimitMate'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'fatih/vim-go'
 
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
