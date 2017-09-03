@@ -52,11 +52,11 @@ set_from_resource $fg i3wm.color2 #f0f0f0
 set_from_resource $bg i3wm.color7 #f0f0f0
 #
 # # class                 border  backgr. text indicator child_border
-client.focused          $fg     $fg     $bg  $fg       $fg
-client.focused_inactive $fg     $bg     $fg  $bg       $bg
-client.unfocused        $fg     $bg     $fg  $bg       $bg
-client.urgent           $fg     $bg     $fg  $bg       $bg
-client.placeholder      $fg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $fg     $fg     $bg  $fg       $fg
+client.unfocused        $fg     $fg     $bg  $fg       $fg
+client.urgent           $fg     $fg     $bg  $fg       $fg
+client.placeholder      $fg     $fg     $bg  $fg       $fg
 
 client.background       $bg
 #
@@ -78,6 +78,8 @@ exec_always --no-startup-id sed -i "s/gradient_color_1.*/gradient_color_1 = '$fg
 
 bindsym $mod+l exec --no-startup-id i3lock -t -i $(cat ~/.pape)
 bindsym $mod+Shift+s exec --no-startup-id i3lock -t -i $(cat ~/.pape) && systemctl suspend
+
+bindsym Print exec --no-startup-id "sleep 0.2; scrot -e 'mv $f ~/Pictures/Screenshots' -s '%Y-%m-%d-%s_$wx$h.png'"
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -236,12 +238,11 @@ bar {
     statusline $bg
     separator  $bg
 
-    focused_workspace  $fg $bg $fg
-    active_workspace   $bg $fg $bg
-    inactive_workspace $bg $fg $bg
-    urgent_workspace   $bg $fg $bg
+    focused_workspace  $bg $fg $bg
+    active_workspace   $fg $bg $fg
+    inactive_workspace $fg $bg $fg
+    urgent_workspace   $fg $bg $fg
   }
-
-  status_command i3status
+  status_command ~/.config/i3/scripts/status.sh
   tray_output primary
 }
