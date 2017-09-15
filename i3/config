@@ -207,13 +207,13 @@ bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
 
-bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym $mod+backslash exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+bracketright exec --no-startup-id "pactl set-sink-volume 0 +5%; pactl set-sink-volume 1 +5%"
+bindsym $mod+bracketleft exec --no-startup-id "pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%"
+bindsym $mod+backslash exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle"
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5%; pactl set-sink-volume 1 +5"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle"
 # # Sreen brightness controls
  bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
  bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
@@ -238,10 +238,10 @@ bar {
     statusline $bg
     separator  $bg
 
-    focused_workspace  $bg $fg $bg
-    active_workspace   $fg $bg $fg
-    inactive_workspace $fg $bg $fg
-    urgent_workspace   $fg $bg $fg
+    focused_workspace  $fg $bg $fg
+    active_workspace   $bg $fg $bg
+    inactive_workspace $bg $fg $bg
+    urgent_workspace   $red $fg $bg
   }
   status_command ~/.config/i3/scripts/status.sh
   tray_output primary

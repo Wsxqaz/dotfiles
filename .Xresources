@@ -3,10 +3,16 @@ URxvt*.shading: 10
 URxvt.scrollBar: false
 URxvt.geometry: 80x24
 !URxvt.geometry: 85x27
-URxvt.depth: 32
+#URxvt.depth: 32
 !
 URxvt.perl-ext-common: font-size
 !
+
+URxvt.keysym.Control-Up:     \033[1;5A
+URxvt.keysym.Control-Down:   \033[1;5B
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
 URxvt.keysym.C-Up:     font-size:increase
 URxvt.keysym.C-Down:   font-size:decrease
 URxvt.keysym.C-equal:  font-size:reset

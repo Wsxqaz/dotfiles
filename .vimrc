@@ -27,7 +27,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'Raimondi/delimitMate'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
-
+Plugin 'lervag/vimtex'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
 
@@ -69,6 +69,9 @@ syntax on
 set mouse=a
 
 hi clear SignColumn
+
+
+let g:vimtex_view_method = 'zathura'
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
@@ -115,5 +118,6 @@ augroup mydelimitMate
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
+
 
 
