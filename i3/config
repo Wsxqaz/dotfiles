@@ -48,12 +48,12 @@ set_from_resource $cyan i3wm.color6 #ffffff
 set_from_resource $cyan_l i3wm.color14 #ffffff
 set_from_resource $grey i3wm.color7 #ffffff
 set_from_resource $grey_l i3wm.color15 #ffffff
-set_from_resource $fg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color0 #f0f0f0
 set_from_resource $bg i3wm.color7 #f0f0f0
 #
 # # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $fg     $fg     $bg  $fg       $fg
+client.focused_inactive $grey_l $fg     $bg  $fg       $fg
 client.unfocused        $fg     $fg     $bg  $fg       $fg
 client.urgent           $fg     $fg     $bg  $fg       $fg
 client.placeholder      $fg     $fg     $bg  $fg       $fg
@@ -61,23 +61,36 @@ client.placeholder      $fg     $fg     $bg  $fg       $fg
 client.background       $bg
 #
 # # PROTIP: You can also dynamically set dmenu's colors this way:
-bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+#bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+bindsym $mod+d exec "rofi -show run"
+bindsym $mod+Tab exec "rofi -show window"
+bindsym $mod+s exec "rofi -show ssh"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 exec --no-startup-id nm-applet
 exec_always --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
-exec_always --no-startup-id feh --bg-fill $(cat ~/.pape)
-exec_always --no-startup-id wal -t -i $(cat ~/.pape)
+exec_always --no-startup-id feh --bg-fill $(cat ~/.pape.sh)
+exec_always --no-startup-id wal -t -i $(cat ~/.pape.sh)
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id sed -i "s/gradient_color_2.*/gradient_color_2 = '$bg'/" ~/.config/cava/config
-exec_always --no-startup-id sed -i "s/gradient_color_1.*/gradient_color_1 = '$fg'/" ~/.config/cava/config
-#exec_always --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
-#exec_always --no-startup-id wal -t -i /home/wsxqaz/Pictures/Wallpapers/1492186183565.png
 
-bindsym $mod+l exec --no-startup-id i3lock -t -i $(cat ~/.pape)
-bindsym $mod+Shift+s exec --no-startup-id i3lock -t -i $(cat ~/.pape) && systemctl suspend
+#Cava
+exec_always --no-startup-id sleep 3; sed -i "s/gradient_color_2.*/gradient_color_2 = '$bg'/" ~/.config/cava/config
+exec_always --no-startup-id sleep 3; sed -i "s/gradient_color_1.*/gradient_color_1 = '$fg'/" ~/.config/cava/config
+
+#Zathura
+exec_always --no-startup-id sleep 3; sed -i 's/set default-bg.*/set default-bg "$black"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set default-fg.*/set default-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set statusbar-fg.*/set statusbar-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set statusbar-bg.*/set statusbar-bg "$fg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set inputbar-fg.*/set inputbar-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set inputbar-bg.*/set inputbar-bg "$fg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set recolor-lightcolor.*/set recolor-lightcolor "$black"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 3; sed -i 's/set recolor-darkcolor.*/set recolor-darkcolor "$bg"/' ~/.config/zathura/zathurarc
+
+bindsym $mod+l exec --no-startup-id i3lock -t -i $(cat ~/.pape.sh)
+bindsym $mod+Shift+s exec --no-startup-id i3lock -t -i $(cat ~/.pape.sh) && systemctl suspend
 
 bindsym Print exec --no-startup-id "sleep 0.2; scrot -e 'mv $f ~/Pictures/Screenshots' -s '%Y-%m-%d-%s_$wx$h.png'"
 
@@ -119,6 +132,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+x exec i3-msg move workspace to output right
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -129,7 +143,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 

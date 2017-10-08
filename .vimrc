@@ -13,29 +13,35 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'jistr/vim-nerdtree-tabs"'
 
-Plugin 'dylanaraps/wal'
+Plugin 'flxf/uCpp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'ervandew/supertab'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Raimondi/delimitMate'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
-Plugin 'lervag/vimtex'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
+Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
 
 filetype plugin indent on
 
 colorscheme wal
+
+set wildmenu
+set wildignorecase
+set wildmode=list:longest,full
 
 set backspace=indent,eol,start
 set ruler
@@ -63,6 +69,8 @@ command! C nohlsearch
 
 " use 'Y' to yank to the end of a line, instead of the whole line
 noremap <silent> Y y$
+
+nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
 
 syntax on
 

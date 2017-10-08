@@ -74,6 +74,17 @@ export EDITOR='vim'
 #   export EDITOR='mvim'
 # fi
 
+alias school="~/.screenlayout/school.sh"
+alias home="~/.screenlayout/home.sh"
+alias cs341="cd ~/school/cs341"
+alias cs341a="cd ~/school/cs341/assignments"
+alias cs343="cd ~/school/cs343"
+alias cs343a="cd ~/school/cs343/cs343-assignments"
+alias cs456="cd ~/school/cs456"
+alias cs456a="cd ~/school/cs456/assignments"
+alias cs360="cd ~/school/cs360"
+alias cs360a="cd ~/school/cs360/assignments"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
