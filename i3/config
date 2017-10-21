@@ -76,18 +76,18 @@ exec_always --no-startup-id wal -t -i $(cat ~/.pape.sh)
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 
 #Cava
-exec_always --no-startup-id sleep 3; sed -i "s/gradient_color_2.*/gradient_color_2 = '$bg'/" ~/.config/cava/config
-exec_always --no-startup-id sleep 3; sed -i "s/gradient_color_1.*/gradient_color_1 = '$fg'/" ~/.config/cava/config
+exec_always --no-startup-id sleep 10; sed -i "s/gradient_color_2.*/gradient_color_2 = '$bg'/" ~/.config/cava/config
+exec_always --no-startup-id sleep 10; sed -i "s/gradient_color_1.*/gradient_color_1 = '$fg'/" ~/.config/cava/config
 
 #Zathura
-exec_always --no-startup-id sleep 3; sed -i 's/set default-bg.*/set default-bg "$black"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set default-fg.*/set default-fg "$bg"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set statusbar-fg.*/set statusbar-fg "$bg"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set statusbar-bg.*/set statusbar-bg "$fg"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set inputbar-fg.*/set inputbar-fg "$bg"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set inputbar-bg.*/set inputbar-bg "$fg"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set recolor-lightcolor.*/set recolor-lightcolor "$black"/' ~/.config/zathura/zathurarc
-exec_always --no-startup-id sleep 3; sed -i 's/set recolor-darkcolor.*/set recolor-darkcolor "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set default-bg.*/set default-bg "$black"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set default-fg.*/set default-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set statusbar-fg.*/set statusbar-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set statusbar-bg.*/set statusbar-bg "$fg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set inputbar-fg.*/set inputbar-fg "$bg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set inputbar-bg.*/set inputbar-bg "$fg"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set recolor-lightcolor.*/set recolor-lightcolor "$black"/' ~/.config/zathura/zathurarc
+exec_always --no-startup-id sleep 10; sed -i 's/set recolor-darkcolor.*/set recolor-darkcolor "$bg"/' ~/.config/zathura/zathurarc
 
 bindsym $mod+l exec --no-startup-id i3lock -t -i $(cat ~/.pape.sh)
 bindsym $mod+Shift+s exec --no-startup-id i3lock -t -i $(cat ~/.pape.sh) && systemctl suspend

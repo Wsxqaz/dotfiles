@@ -6,6 +6,7 @@ URxvt.geometry: 80x24
 #URxvt.depth: 32
 !
 URxvt.perl-ext-common: font-size
+URxvt.perl-ext-common: selection-to-clipboard
 !
 
 URxvt.keysym.Control-Up:     \033[1;5A

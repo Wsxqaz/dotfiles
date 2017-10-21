@@ -22,7 +22,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Chiel92/vim-autoformat'
@@ -42,6 +42,14 @@ colorscheme wal
 set wildmenu
 set wildignorecase
 set wildmode=list:longest,full
+
+set splitright
+set splitbelow
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 set backspace=indent,eol,start
 set ruler
@@ -64,6 +72,10 @@ command! Wqa wqa
 command! W w
 command! Q q
 
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 " Use :C to clear hlsearch
 command! C nohlsearch
 
@@ -79,11 +91,11 @@ set mouse=a
 hi clear SignColumn
 
 " Copy to X CLIPBOARD
-map <leader>cc :w !xsel -i -b<CR>
+map <leader>cc :w !xsel -i -p<CR>
 " map <leader>cp :w !xsel -i -p<CR>
 " map <leader>cs :w !xsel -i -s<CR>
 " " Paste from X CLIPBOARD
-" map <leader>pp :r!xsel -p<CR>
+" map <leader>pp :r!xsel -b<CR>
 " map <leader>ps :r!xsel -s<CR>
 " map <leader>pb :r!xsel -b<CR>
 
