@@ -1,14 +1,14 @@
 # zathurarc-dark
 
 set font                        "inconsolata 9"
-set default-bg "#101D0F"
-set default-fg "#D8E099"
+set default-bg "#1E2D30"
+set default-fg "#B4A295"
 
-set statusbar-fg "#D8E099"
-set statusbar-bg "#101D0F"
+set statusbar-fg "#B4A295"
+set statusbar-bg "#1E2D30"
 
-set inputbar-bg "#101D0F"
-set inputbar-fg "#D8E099"
+set inputbar-bg "#1E2D30"
+set inputbar-fg "#B4A295"
 
 set notification-error-bg       "#AC4142" #08
 set notification-error-fg       "#151515" #00
@@ -28,8 +28,8 @@ set completion-fg               "#75B5AA" #0C
 set notification-bg             "#90A959" #0B
 set notification-fg             "#151515" #00
 
-set recolor-lightcolor "#101D0F"
-set recolor-darkcolor "#D8E099"
+set recolor-lightcolor "#1E2D30"
+set recolor-darkcolor "#B4A295"
 set recolor                     "true"
 
 # setting recolor-keep true will keep any color your pdf has.

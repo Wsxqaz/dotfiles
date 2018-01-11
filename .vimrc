@@ -100,7 +100,8 @@ map <leader>cc :w !xsel -i -p<CR>
 " map <leader>pb :r!xsel -b<CR>
 
 
-
+set completeopt-=preview
+let g:ycm_filetype_blacklist = { 'tex': 1 }
 let g:vimtex_view_method = 'zathura'
 
 " ----- jistr/vim-nerdtree-tabs -----

@@ -85,6 +85,8 @@ alias cs456a="cd ~/school/cs456/assignments"
 alias cs360="cd ~/school/cs360"
 alias cs360a="cd ~/school/cs360/assignments"
 
+alias rset="redshift -b 0.4:0.4 -O 3200k"
+alias rclear="redshift -x"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
